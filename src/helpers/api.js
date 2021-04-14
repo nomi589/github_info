@@ -6,6 +6,14 @@ export function getUser(user) {
       return res.json();
     })
     .then((data) => {
-      return data.items[0];
+      const users = data.items;
+
+      return users.map((user) => {
+        return {
+          title: user.login,
+          url: user.html_url,
+          avatar: user.avatar_url,
+        };
+      });
     });
 }

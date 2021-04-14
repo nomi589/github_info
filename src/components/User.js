@@ -19,7 +19,7 @@ export default function User() {
       <section className="input-form">
         <input
           type="text"
-          placeholder="enter github username"
+          placeholder="enter github username to search"
           onChange={(e) => setUser(e.target.value)}
         />
         <input type="button" value="Get user info" onClick={handleSubmit} />
