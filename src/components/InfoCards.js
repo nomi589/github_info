@@ -1,12 +1,26 @@
 import React from "react";
 
+import "./styles/infocards.css";
+
 export default function InfoCards(props) {
   const data = props.data;
 
   return (
-    <ul>
+    <ul className="info-cards">
       {data.map((item, index) => {
-        return <li key={index}>{item.title}</li>;
+        return (
+          <li key={index} className="info-card">
+            <section className="avatar">
+              <img src={item.avatar} />
+            </section>
+            <section className="info">
+              <h2>{item.title}</h2>
+              <p>
+                <a href={item.url}>{item.url}</a>
+              </p>
+            </section>
+          </li>
+        );
       })}
     </ul>
   );

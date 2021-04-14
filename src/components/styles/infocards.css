@@ -1,0 +1,36 @@
+.info-cards {
+  list-style-type: none;
+  padding: 0;
+}
+
+.info-card {
+  margin-bottom: 10px;
+  padding: 5px 5px;
+  display: flex;
+  gap: 50px;
+  background-color: #f9f9f9;
+  box-shadow: 2px 2px inset #ccc;
+}
+
+.avatar img {
+  max-width: 100px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.info h2 {
+  margin: 0;
+}
+
+.info a {
+  text-decoration: none;
+  color: orangered;
+}
+
+.info a:hover {
+  text-decoration: underline;
+  color: rgb(200, 55, 0);
+}

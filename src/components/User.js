@@ -9,7 +9,6 @@ export default function User() {
   const [usersData, setUsersData] = React.useState(null);
 
   const handleSubmit = (e) => {
-    console.log("submitted");
     getUsers(userInput).then((users) => {
       setUsersData(users);
     });
