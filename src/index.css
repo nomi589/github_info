@@ -25,6 +25,10 @@ body {
   text-align: center;
 }
 
+nav {
+  margin-bottom: 20px;
+}
+
 nav ul {
   list-style-type: none;
   margin: 0;
