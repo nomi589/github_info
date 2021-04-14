@@ -8,26 +8,28 @@ import "./index.css";
 
 function NavLinks() {
   return (
-    <ul>
-      <li>
-        <NavLink to="/" activeClassName="navlink-active">
-          User Info
-        </NavLink>
-      </li>
-      <li>
-        <NavLink to="/repos" activeClassName="navlink-active">
-          Repos Info
-        </NavLink>
-      </li>
-    </ul>
+    <nav>
+      <ul>
+        <li>
+          <NavLink to="/" exact activeClassName="navlink-active">
+            User Info
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/repos" activeClassName="navlink-active">
+            Repos Info
+          </NavLink>
+        </li>
+      </ul>
+    </nav>
   );
 }
 
 function App() {
   return (
     <Router>
+      <h1 class="main-heading">Github Information</h1>
       <NavLinks />
-
       <Route path="/" exact component={User} />
       <Route path="/repos" component={Repos} />
     </Router>
