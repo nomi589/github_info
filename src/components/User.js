@@ -1,16 +1,17 @@
 import React from "react";
-import { getUser } from "../helpers/api";
+import { getUsers } from "../helpers/api";
+import InfoCards from "./InfoCards";
 
 import "./styles/user.css";
 
 export default function User() {
-  const [user, setUser] = React.useState("");
-  const [userData, setUserData] = React.useState(null);
+  const [userInput, setUserInput] = React.useState("");
+  const [usersData, setUsersData] = React.useState(null);
 
   const handleSubmit = (e) => {
     console.log("submitted");
-    getUser(user).then((userData) => {
-      setUserData(userData);
+    getUsers(userInput).then((users) => {
+      setUsersData(users);
     });
   };
 
@@ -20,12 +21,17 @@ export default function User() {
         <input
           type="text"
           placeholder="enter github username to search"
-          onChange={(e) => setUser(e.target.value)}
+          onChange={(e) => setUserInput(e.target.value)}
         />
-        <input type="button" value="Get user info" onClick={handleSubmit} />
+        <input
+          type="button"
+          value="Search"
+          disabled={!userInput}
+          onClick={handleSubmit}
+        />
       </section>
-      <section className="user-display">
-        {userData && <pre>{JSON.stringify(userData, null, 2)}</pre>}
+      <section className="users-display">
+        {usersData && <InfoCards data={usersData} />}
       </section>
     </React.Fragment>
   );

@@ -1,4 +1,4 @@
-export function getUser(user) {
+export function getUsers(user) {
   const queryEndpoint = `https://api.github.com/search/users?q=${user}`;
 
   return fetch(queryEndpoint)
