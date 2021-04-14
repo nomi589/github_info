@@ -6,7 +6,7 @@ export default function InfoCards(props) {
   return (
     <ul>
       {data.map((item, index) => {
-        return <li>{item.title}</li>;
+        return <li key={index}>{item.title}</li>;
       })}
     </ul>
   );
