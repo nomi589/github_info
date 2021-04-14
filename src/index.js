@@ -28,7 +28,7 @@ function NavLinks() {
 function App() {
   return (
     <Router>
-      <h1 class="main-heading">Github Information</h1>
+      <h1 className="main-heading">Github Information</h1>
       <NavLinks />
       <Route path="/" exact component={User} />
       <Route path="/repos" component={Repos} />
