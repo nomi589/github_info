@@ -7,13 +7,17 @@ import "./styles/user.css";
 export default function User() {
   const [userInput, setUserInput] = React.useState("");
   const [usersData, setUsersData] = React.useState(null);
+  const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState(null);
 
   const handleSubmit = (e) => {
     setError(null);
+    setUsersData(null);
+    setLoading(true);
 
     getUsers(userInput)
       .then((users) => {
+        setLoading(false);
         setUsersData(users);
       })
       .catch((error) => {
@@ -38,7 +42,8 @@ export default function User() {
           onClick={handleSubmit}
         />
       </section>
-      <section className="error-display">{error && <pre>{error}</pre>}</section>
+      {loading && <pre>fetching data...</pre>}
+      {error && <pre>{error}</pre>}
       <section className="users-display">
         {usersData && <InfoCards data={usersData} />}
       </section>
