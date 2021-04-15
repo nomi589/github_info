@@ -5,6 +5,10 @@ import "./styles/infocards.css";
 export default function InfoCards(props) {
   const data = props.data;
 
+  if (data.length === 0) {
+    return <pre>Search returned 0 results.</pre>;
+  }
+
   return (
     <section className="info-display">
       <ul className="info-cards">
