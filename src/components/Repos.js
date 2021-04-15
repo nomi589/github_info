@@ -18,7 +18,6 @@ export default function Repos() {
     setError(null);
     setReposData(null);
 
-    console.log("submitted");
     getRepos(repoInput)
       .then((repos) => {
         setLoading(false);
