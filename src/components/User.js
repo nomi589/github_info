@@ -44,9 +44,7 @@ export default function User() {
       </section>
       {loading && <pre>fetching data...</pre>}
       {error && <pre>{error}</pre>}
-      <section className="users-display">
-        {usersData && <InfoCards data={usersData} />}
-      </section>
+      {usersData && <InfoCards data={usersData} />}
     </React.Fragment>
   );
 }
