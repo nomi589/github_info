@@ -16,6 +16,12 @@ export default function InfoCards(props) {
               </section>
               <section className="info">
                 <h2>{item.title}</h2>
+                {item.owner && (
+                  <span className="metadata">
+                    by&nbsp;
+                    <a href={item.owner_url}>{item.owner}</a>
+                  </span>
+                )}
                 <p>
                   <a href={item.url}>{item.url}</a>
                 </p>
