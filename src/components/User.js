@@ -33,6 +33,7 @@ export default function User() {
   return (
     <React.Fragment>
       <InputForm
+        placeholder="enter github username to search..."
         handleInput={handleInput}
         handleSubmit={handleSubmit}
         searchBtnDisabled={!userInput}

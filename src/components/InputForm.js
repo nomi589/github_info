@@ -7,7 +7,7 @@ export default function InputForm(props) {
     <section className="input-form">
       <input
         type="text"
-        placeholder="enter github username to search"
+        placeholder={props.placeholder}
         onChange={props.handleInput}
       />
       <input
