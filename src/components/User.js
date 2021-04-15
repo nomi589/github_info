@@ -7,11 +7,20 @@ import "./styles/user.css";
 export default function User() {
   const [userInput, setUserInput] = React.useState("");
   const [usersData, setUsersData] = React.useState(null);
+  const [error, setError] = React.useState(null);
 
   const handleSubmit = (e) => {
-    getUsers(userInput).then((users) => {
-      setUsersData(users);
-    });
+    setError(null);
+
+    getUsers(userInput)
+      .then((users) => {
+        setUsersData(users);
+      })
+      .catch((error) => {
+        setError(
+          "Could not fetch data. Please check your internet connection."
+        );
+      });
   };
 
   return (
@@ -29,6 +38,7 @@ export default function User() {
           onClick={handleSubmit}
         />
       </section>
+      <section className="error-display">{error && <pre>{error}</pre>}</section>
       <section className="users-display">
         {usersData && <InfoCards data={usersData} />}
       </section>

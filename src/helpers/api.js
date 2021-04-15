@@ -15,5 +15,8 @@ export function getUsers(user) {
           avatar: user.avatar_url,
         };
       });
+    })
+    .catch((error) => {
+      throw new Error(error);
     });
 }
