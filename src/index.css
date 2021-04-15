@@ -14,8 +14,10 @@ body {
 
 #app {
   width: 720px;
+  max-height: 720px;
   margin: 50px auto;
   padding: 20px;
+  overflow-y: auto;
   background-color: #eaeaea;
   box-shadow: 1px 3px 5px #aaa;
   border-radius: 3px;
