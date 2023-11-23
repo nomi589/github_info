@@ -25,7 +25,7 @@ export default function User() {
       })
       .catch((error) => {
         setError(
-          "Could not fetch data. Please check your internet connection."
+          "Could not fetch data. Please check your internet connection.",
         );
       });
   };
@@ -41,6 +41,15 @@ export default function User() {
       {loading && <pre>fetching data...</pre>}
       {error && <pre>{error}</pre>}
       {usersData && <InfoCards data={usersData} />}
+      <InfoCards
+        data={[
+          {
+            title: "Title",
+            url: "https://github.com/nomi589",
+            avatar: "https://placehold.co/50",
+          },
+        ]}
+      />
     </React.Fragment>
   );
 }
